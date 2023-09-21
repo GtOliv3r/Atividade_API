@@ -9,8 +9,14 @@ from api.serializers.alunoSerializer import AlunoSerializer
 
 class AlunoView(APIView):
     """
-    Retrieve, update or delete a category instance.
+    List and Post aluno instance(s).
     """
+
+    # Método get para listar todos os alunos
+    def get(self, request, format=None):
+        alunos = Aluno.objects.all()  # Chama todos os objetos do model Aluno do banco de dados
+        serializer = AlunoSerializer(alunos, many=True)  # Serializa os alunos
+        return Response(serializer.data, status=status.HTTP_200_OK)  # Retorna a lista serializada
 
     #Método Post
     def post(self, request, format=None): 
@@ -19,35 +25,3 @@ class AlunoView(APIView):
             serializer.save() #Se sim, armazena no banco de dados
             return Response(serializer.data, status=status.HTTP_201_CREATED) #E retorna essa mensagem de sucesso
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST) #Senão, retorna essa de falha
-
-
-    #Método Get para achar o objeto e ver se ele existe, utilizado em outros Metodos   
-    def get_object(self, pk):
-        try:
-            return Aluno.objects.get(pk=pk) #tras o objeto usando id especifico
-        except Aluno.DoesNotExist: #Senão achar, mostra a mensagem dizendo que não existe esse objeto
-            raise Http404 #Tela HTML de bad request
-    
-    
-    #Método get especifico pelo id
-    def get(self, request, pk, format=None):
-        aluno = self.get_object(pk) #Chama o próprio método get_object e tras o objeto usando id especifico
-        serializer = AlunoSerializer(aluno) # Desserializa o objeto do model aluno e armazena em serializer
-        return Response(serializer.data, status=status.HTTP_200_OK)  # Mensagem de sucesso
-
-    #Método put
-    def put(self, request, pk, format=None):
-        aluno = self.get_object(pk) #Chama o próprio método get_object e tras o objeto usando id especifico
-        serializer = AlunoSerializer(aluno,data=request.data) # Desserializa o objeto do model aluno retornando os campos e armazena em serializer
-        if (serializer.is_valid()): #Se as alterações estiverem corretas dentro do esperado, realiza a instrução abaixo
-            serializer.save() #Salva no banco de Dados e mostra a mensagem abaixo de sucesso
-            return Response(serializer.data, status=status.HTTP_201_CREATED) #Mensagem de operação sucedida  
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST) #Senão mostra essa mensagem de operação falha
-    
-    #Método delete
-    def delete(self, request, pk, format=None): 
-        aluno = self.get_object(pk) #Chama o próprio método get_object e tras o objeto usando id especifico
-        aluno.delete() #Deleta o objeto especificado pelo id
-        return Response(status=status.HTTP_204_NO_CONTENT) #Retorna mensagem de sucesso nos dizendo que não mais conteúdo
-    
-    
