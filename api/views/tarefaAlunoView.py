@@ -5,6 +5,7 @@ from api.models.tarefa import Tarefa
 from api.serializers.tarefaSerializer import TarefaSerializer
 from api.models.aluno import Aluno
 from django.http import Http404
+from rest_framework.serializers import ValidationError
 
 class TarefasAlunoView(APIView):
     """
@@ -18,7 +19,7 @@ class TarefasAlunoView(APIView):
             raise Http404
 
     def get(self, request,pk, format=None):
-        aluno = self.get_aluno(pk)  # Alteração: Usando o método get_aluno para obter o objeto do aluno
-        tarefas = Tarefa.objects.filter(aluno=aluno)  # Alteração: Filtrando as tarefas pelo aluno
-        serializer = TarefaSerializer(tarefas, many=True)
-        return Response(serializer.data, status=status.HTTP_200_OK)
+            aluno = self.get_aluno(pk)  # Alteração: Usando o método get_aluno para obter o objeto do aluno
+            tarefas = Tarefa.objects.filter(aluno=aluno)  # Alteração: Filtrando as tarefas pelo aluno
+            serializer = TarefaSerializer(tarefas, many=True)
+            return Response(serializer.data, status=status.HTTP_200_OK)
