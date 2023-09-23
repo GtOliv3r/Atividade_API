@@ -13,7 +13,6 @@ class TarefaView(APIView):
     POST de Tarefa e GET da lista de Tarefa
     """
 
-
      # Método get para listar todos os alunos
     def get(self, request, format=None):
         alunos = Tarefa.objects.all()  # Chama todos os objetos do model Tarefa do banco de dados

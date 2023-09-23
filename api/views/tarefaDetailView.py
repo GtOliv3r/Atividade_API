@@ -9,8 +9,8 @@ from api.serializers.tarefaSerializer import TarefaSerializer
 
 class TarefaDetailView(APIView):
     """
-    Retrieve, update or delete a tarefa instance.
-    """
+    GET, PUT e DELETE de Tarefa com id específico
+    """ 
 
     #Método Get para achar o objeto e ver se ele existe, utilizado em outros Metodos   
     def get_object(self, pk):

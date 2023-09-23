@@ -10,7 +10,7 @@ from api.serializers.tarefaSerializer import TarefaSerializer
 
 class DisciplinaDetailView(APIView):
     """
-    Retrieve, update or delete a discipline instance.
+    GET, PUT e DELETE de Disciplina com id específico
     """
 
 

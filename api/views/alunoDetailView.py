@@ -7,6 +7,10 @@ from rest_framework import status
 from api.models.aluno import Aluno
 from api.serializers.alunoSerializer import AlunoSerializer
 
+"""
+GET, PUT e DELETE de Aluno com id específico
+"""
+
 class AlunoDetailView(APIView):
 
     #Método Get para achar o objeto e ver se ele existe, utilizado em outros Metodos   

@@ -11,10 +11,9 @@ from api.serializers.tarefaSerializer import TarefaSerializer
 
 class DisciplinaView(APIView):
     """
-    Retrieve, update or delete a category instance.
+    POST de Disciplina e GET da lista de disciplinas
     """
-
-
+    
     # Método get para listar todos os alunos
     def get(self, request, format=None):
         alunos = Disciplina.objects.all()  # Chama todos os objetos do model Disciplina do banco de dados
