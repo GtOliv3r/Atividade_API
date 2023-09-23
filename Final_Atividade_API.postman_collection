@@ -490,6 +490,32 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Listando todas as tarefas de aluno",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/alunos/2/tarefas/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"alunos",
+						"2",
+						"tarefas",
+						""
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
