@@ -1,0 +1,3219 @@
+{
+	"info": {
+		"_postman_id": "82dcfa58-4d3f-47d8-a0f7-8761f9a065b3",
+		"name": "Atividade_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29352626"
+	},
+	"item": [
+		{
+			"name": "Aluno",
+			"item": [
+				{
+					"name": "adicionar aluno",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Gust\",\r\n    \"email\": \"Gustavo@Gsdsa.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/alunos/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"alunos",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Sucess_post",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"nome\": \"Professor André\",\r\n  \"email\": \"Andrezin@example.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/alunos/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"alunos",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 18:54:05 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "65"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 6,\n    \"nome\": \"Professor André\",\n    \"email\": \"Andrezin@example.com\"\n}"
+						},
+						{
+							"name": "Fail_Post_NoField",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"nome\": \"Professor André\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/alunos/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"alunos",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 18:54:50 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "75"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"ValidationError\",\n    \"cause\": [\n        {\n            \"email\": [\n                \"This field is required.\"\n            ]\n        }\n    ]\n}"
+						},
+						{
+							"name": "Fail_Post_Body_Object",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"nome\": \"Professor André\",\r\n  \"email\": \"Andrezin@example.com\"\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/alunos/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"alunos",
+										""
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 19:14:18 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "104"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"ParseError\",\n    \"cause\": [\n        \"JSON parse error - Expecting ',' delimiter: line 4 column 1 (char 68)\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "chama e mostra aluno com id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Gust\",\r\n    \"email\": \"Gustavo@Gsdsa.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/alunos/2/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"alunos",
+								"2",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Sucess_ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\": \"Gust\",\r\n    \"email\": \"Gustavo@Gsdsa.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/alunos/2/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"alunos",
+										"2",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 18:51:36 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "64"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"nome\": \"Gustavsdsdsds\",\n    \"email\": \"Gustavo@Gsdsdsusta.com\"\n}"
+						},
+						{
+							"name": "Fail_ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\": \"Gust\",\r\n    \"email\": \"Gustavo@Gsdsa.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/alunos/1/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"alunos",
+										"1",
+										""
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 18:52:25 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "23"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"Not found.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Atualizar todos os campos de aluno com id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"nome\": \"Gustasasvs\",\r\n    \"email\": \"Gustavo@Gustsasa.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/alunos/2/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"alunos",
+								"2",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Put_Sucess",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"nome\": \"Gustasasvs\",\r\n    \"email\": \"Gustavo@Gustsasa.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/alunos/2/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"alunos",
+										"2",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 19:15:41 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "59"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"nome\": \"Gustasasvs\",\n    \"email\": \"Gustavo@Gustsasa.com\"\n}"
+						},
+						{
+							"name": "Put_Not_Found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"nome\": \"Gustasasvs\",\r\n    \"email\": \"Gustavo@Gustsasa.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/alunos/1/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"alunos",
+										"1",
+										""
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 19:17:15 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "23"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"Not found.\"\n}"
+						},
+						{
+							"name": "Put_Fail_Field_Required",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 2,\r\n    \r\n    \"email\": \"Gustavo@Gustsasa.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/alunos/2/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"alunos",
+										"2",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 19:18:42 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "36"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"nome\": [\n        \"This field is required.\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Deletar aluno com id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"nome\": \"Gustasasvs\",\r\n    \"email\": \"Gustavo@Gustsasa.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/alunos/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"alunos",
+								"1",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete_Sucess",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"nome\": \"Gustasasvs\",\r\n    \"email\": \"Gustavo@Gustsasa.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/alunos/6/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"alunos",
+										"6",
+										""
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 19:19:51 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Delete_Fail_Not_Found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"nome\": \"Gustasasvs\",\r\n    \"email\": \"Gustavo@Gustsasa.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/alunos/6/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"alunos",
+										"6",
+										""
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 19:20:17 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "23"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"Not found.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Listando todos os alunos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/alunos/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"alunos",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GET_List_Sucess",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/alunos/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"alunos",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 19:21:09 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "244"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 2,\n        \"nome\": \"Gustasasvs\",\n        \"email\": \"Gustavo@Gustsasa.com\"\n    },\n    {\n        \"id\": 3,\n        \"nome\": \"Gust\",\n        \"email\": \"Gustavo@Gsdsa.com\"\n    },\n    {\n        \"id\": 4,\n        \"nome\": \"João da Silva\",\n        \"email\": \"joao.silva@example.com\"\n    },\n    {\n        \"id\": 5,\n        \"nome\": \"Gusta Oliver\",\n        \"email\": \"Gusta.oliver@example.com\"\n    }\n]"
+						},
+						{
+							"name": "GET_List_Error_URL",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/a/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"a",
+										""
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 19:22:01 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "3279"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\">\n        <title>Page not found at /api/a/</title>\n        <meta name=\"robots\" content=\"NONE,NOARCHIVE\">\n        <style type=\"text/css\">\n    html * { padding:0; margin:0; }\n    body * { padding:10px 20px; }\n    body * * { padding:0; }\n    body { font:small sans-serif; background:#eee; color:#000; }\n    body>div { border-bottom:1px solid #ddd; }\n    h1 { font-weight:normal; margin-bottom:.4em; }\n    h1 span { font-size:60%; color:#666; font-weight:normal; }\n    table { border:none; border-collapse: collapse; width:100%; }\n    td, th { vertical-align:top; padding:2px 3px; }\n    th { width:12em; text-align:right; color:#666; padding-right:.5em; }\n    #info { background:#f6f6f6; }\n    #info ol { margin: 0.5em 4em; }\n    #info ol li { font-family: monospace; }\n    #summary { background: #ffc; }\n    #explanation { background:#eee; border-bottom: 0px none; }\n    pre.exception_value { font-family: sans-serif; color: #575757; font-size: 1.5em; margin: 10px 0 10px 0; }\n  </style>\n    </head>\n    <body>\n        <div id=\"summary\">\n            <h1>Page not found \n                <span>(404)</span>\n            </h1>\n            <table class=\"meta\">\n                <tr>\n                    <th>Request Method:</th>\n                    <td>GET</td>\n                </tr>\n                <tr>\n                    <th>Request URL:</th>\n                    <td>http://127.0.0.1:8000/api/a/</td>\n                </tr>\n            </table>\n        </div>\n        <div id=\"info\">\n            <p>\n      Using the URLconf defined in \n                <code>core.urls</code>,\n      Django tried these URL patterns, in this order:\n            </p>\n            <ol>\n                <li>\n            \n                admin/\n                \n            \n          </li>\n                <li>\n            \n                api/\n                \n            \n                alunos/\n                \n            \n          </li>\n                <li>\n            \n                api/\n                \n            \n                alunos/&lt;int:pk&gt;/\n                \n            \n          </li>\n                <li>\n            \n                api/\n                \n            \n                disciplinas/\n                \n            \n          </li>\n                <li>\n            \n                api/\n                \n            \n                disciplinas/&lt;int:pk&gt;/\n                \n            \n          </li>\n                <li>\n            \n                api/\n                \n            \n                tarefas/\n                \n            \n          </li>\n                <li>\n            \n                api/\n                \n            \n                tarefas/&lt;int:pk&gt;/\n                \n            \n          </li>\n                <li>\n            \n                api/\n                \n            \n                alunos/&lt;int:pk&gt;/tarefas/\n                \n            \n          </li>\n            </ol>\n            <p>\n        \n          The current path, \n                <code>api/a/</code>,\n        \n        didn’t match any of these.\n            </p>\n        </div>\n        <div id=\"explanation\">\n            <p>\n      You’re seeing this error because you have \n                <code>DEBUG = True</code> in\n      your Django settings file. Change that to\n                <code>False</code>, and Django\n      will display a standard 404 page.\n            </p>\n        </div>\n    </body>\n</html>"
+						}
+					]
+				}
+			],
+			"description": "Esta Collection diz respeito ao model Aluno, que possui os seguintes atributos:\n\n- nome (Campo de texto normal c/ tamanho máx. de 255)\n- email (campo de email)\n    \n\nNessa Collection também temos todos os métodos requeridos:\n\n\\- POST para add um aluno novo  \n\\- GET com ID para mostrar o aluno específico\n\n\\- GET para listar todos os alunos\n\n\\- PUT com ID para atualizar todos os campos do aluno específico\n\n\\- DELETE com ID para deletar o aluno específico\n\nOBS:\n\nEssa Collection também consta possiveis respostas para requests de cada endpoint, mostrando o url e o body da request, o código HTTP retornado e outras informações.\n\nAcesse e faça bom proveito de todos os endpoints!"
+		},
+		{
+			"name": "Disciplina",
+			"item": [
+				{
+					"name": "adiciona disciplina",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Gust\",\r\n    \"descricao\": \"skdksdksdkskdskdkd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/disciplinas/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"disciplinas",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Post_Sucess",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\": \"Esporte\",\r\n    \"descricao\": \"Esportes de boa pra saúde\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/disciplinas/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"disciplinas",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 19:42:22 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "66"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 6,\n    \"nome\": \"Esporte\",\n    \"descricao\": \"Esportes de boa pra saúde\"\n}"
+						},
+						{
+							"name": "Post_Fail_No_Fields",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\": \"Esporte\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/disciplinas/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"disciplinas",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 19:44:35 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "79"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"ValidationError\",\n    \"cause\": [\n        {\n            \"descricao\": [\n                \"This field is required.\"\n            ]\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Listando todas as disciplinas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/disciplinas/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"disciplinas",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GET_List_Sucess",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/disciplinas/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"disciplinas",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 19:48:40 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "396"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 2,\n        \"nome\": \"Gustdsds\",\n        \"descricao\": \"skdksdksdksdsdsddskdskdkd\"\n    },\n    {\n        \"id\": 4,\n        \"nome\": \"Educação Física\",\n        \"descricao\": \"Correr, jogar bola e fazer apostila é a definição dessa matéria!\"\n    },\n    {\n        \"id\": 5,\n        \"nome\": \"Matemática\",\n        \"descricao\": \"Estudo das propriedades e das relações dos números, figuras geométricas e objetos abstratos.\"\n    },\n    {\n        \"id\": 6,\n        \"nome\": \"Esporte\",\n        \"descricao\": \"Esportes de boa pra saúde\"\n    }\n]"
+						},
+						{
+							"name": "Get_List_Error_URL",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/disciplina/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"disciplina",
+										""
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 19:49:20 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "3306"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\">\n        <title>Page not found at /api/disciplina/</title>\n        <meta name=\"robots\" content=\"NONE,NOARCHIVE\">\n        <style type=\"text/css\">\n    html * { padding:0; margin:0; }\n    body * { padding:10px 20px; }\n    body * * { padding:0; }\n    body { font:small sans-serif; background:#eee; color:#000; }\n    body>div { border-bottom:1px solid #ddd; }\n    h1 { font-weight:normal; margin-bottom:.4em; }\n    h1 span { font-size:60%; color:#666; font-weight:normal; }\n    table { border:none; border-collapse: collapse; width:100%; }\n    td, th { vertical-align:top; padding:2px 3px; }\n    th { width:12em; text-align:right; color:#666; padding-right:.5em; }\n    #info { background:#f6f6f6; }\n    #info ol { margin: 0.5em 4em; }\n    #info ol li { font-family: monospace; }\n    #summary { background: #ffc; }\n    #explanation { background:#eee; border-bottom: 0px none; }\n    pre.exception_value { font-family: sans-serif; color: #575757; font-size: 1.5em; margin: 10px 0 10px 0; }\n  </style>\n    </head>\n    <body>\n        <div id=\"summary\">\n            <h1>Page not found \n                <span>(404)</span>\n            </h1>\n            <table class=\"meta\">\n                <tr>\n                    <th>Request Method:</th>\n                    <td>GET</td>\n                </tr>\n                <tr>\n                    <th>Request URL:</th>\n                    <td>http://127.0.0.1:8000/api/disciplina/</td>\n                </tr>\n            </table>\n        </div>\n        <div id=\"info\">\n            <p>\n      Using the URLconf defined in \n                <code>core.urls</code>,\n      Django tried these URL patterns, in this order:\n            </p>\n            <ol>\n                <li>\n            \n                admin/\n                \n            \n          </li>\n                <li>\n            \n                api/\n                \n            \n                alunos/\n                \n            \n          </li>\n                <li>\n            \n                api/\n                \n            \n                alunos/&lt;int:pk&gt;/\n                \n            \n          </li>\n                <li>\n            \n                api/\n                \n            \n                disciplinas/\n                \n            \n          </li>\n                <li>\n            \n                api/\n                \n            \n                disciplinas/&lt;int:pk&gt;/\n                \n            \n          </li>\n                <li>\n            \n                api/\n                \n            \n                tarefas/\n                \n            \n          </li>\n                <li>\n            \n                api/\n                \n            \n                tarefas/&lt;int:pk&gt;/\n                \n            \n          </li>\n                <li>\n            \n                api/\n                \n            \n                alunos/&lt;int:pk&gt;/tarefas/\n                \n            \n          </li>\n            </ol>\n            <p>\n        \n          The current path, \n                <code>api/disciplina/</code>,\n        \n        didn’t match any of these.\n            </p>\n        </div>\n        <div id=\"explanation\">\n            <p>\n      You’re seeing this error because you have \n                <code>DEBUG = True</code> in\n      your Django settings file. Change that to\n                <code>False</code>, and Django\n      will display a standard 404 page.\n            </p>\n        </div>\n    </body>\n</html>"
+						}
+					]
+				},
+				{
+					"name": "chama e mostra a disciplina pelo id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Gustdsds\",\r\n    \"descricao\": \"skdksdksdksdsdsddskdskdkd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/disciplinas/2/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"disciplinas",
+								"2",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get_ID_Sucess",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\": \"Gustdsds\",\r\n    \"descricao\": \"skdksdksdksdsdsddskdskdkd\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/disciplinas/2/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"disciplinas",
+										"2",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 19:50:30 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "66"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"nome\": \"Gustdsds\",\n    \"descricao\": \"skdksdksdksdsdsddskdskdkd\"\n}"
+						},
+						{
+							"name": "Get_ID_Not_Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\": \"Gustdsds\",\r\n    \"descricao\": \"skdksdksdksdsdsddskdskdkd\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/disciplinas/8/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"disciplinas",
+										"8",
+										""
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 19:51:11 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "23"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"Not found.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "atualiza todos os campos da disciplina pelo id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"nome\": \"Gudsdsdsdst\",\r\n    \"descricao\": \"skKKKKKKksdkskdskdkd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/disciplinas/2/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"disciplinas",
+								"2",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Put_Sucess",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"nome\": \"Gudsdsdsdst\",\r\n    \"descricao\": \"skKKKKKKksdkskdskdkd\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/disciplinas/2/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"disciplinas",
+										"2",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 19:54:36 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "64"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"nome\": \"Gudsdsdsdst\",\n    \"descricao\": \"skKKKKKKksdkskdskdkd\"\n}"
+						},
+						{
+							"name": "Put_Fail_Not_Found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"nome\": \"Gudsdsdsdst\",\r\n    \"descricao\": \"skKKKKKKksdkskdskdkd\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/disciplinas/1/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"disciplinas",
+										"1",
+										""
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 19:55:13 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "23"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"Not found.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Deleta disciplina pelo id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"nome\": \"Gudsdsdsdst\",\r\n    \"descricao\": \"skKKKKKKksdkskdskdkd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/disciplinas/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"disciplinas",
+								"1",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete_Sucess",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/disciplinas/6/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"disciplinas",
+										"6",
+										""
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 19:56:25 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Delete_Fail_Not_Found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/disciplinas/10/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"disciplinas",
+										"10",
+										""
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 19:57:03 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "23"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"Not found.\"\n}"
+						}
+					]
+				}
+			],
+			"description": "Esta Collection diz respeito ao model Disciplina, que possui os seguintes atributos:\n\n- nome (Campo de texto normal c/ tamanho máx. de 255)\n    \n- descrição (campo de Texto)\n    \n\nNessa Collection também temos todos os métodos requeridos:\n\n\\- POST para add uma disciplina nova  \n\\- GET com ID para mostrar a disciplina específica\n\n\\- GET para listar todas as disciplinas\n\n\\- PUT com ID para atualizar todos os campos da disciplina específica\n\n\\- DELETE com ID para deletar a disciplina específica\n\nOBS:\n\nEssa Collection também consta possiveis respostas para requests de cada endpoint, mostrando o url e o body da request, o código HTTP retornado e outras informações.\n\nAcesse e faça bom proveito de todos os endpoints!"
+		},
+		{
+			"name": "Tarefa",
+			"item": [
+				{
+					"name": "adiciona Tarefa",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"titulo\": \"Tarefa de trabalho\",\r\n  \"descricao\": \"Realizar exercícios da página 12\",\r\n  \"data_entrega\": \"2023-09-29\",\r\n  \"status_conclusao\": false,\r\n  \"aluno\": 2,  \r\n  \"disciplinas\": [2] \r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/tarefas/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"tarefas",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Post_Sucess",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"titulo\": \"Tarefa de esporte\",\r\n  \"descricao\": \"jogar basquete\",\r\n  \"data_entrega\": \"2023-09-25\",\r\n  \"status_conclusao\": false,\r\n  \"aluno\": 3,  \r\n  \"disciplinas\": [2] \r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/tarefas/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"tarefas",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 20:11:14 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "147"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 6,\n    \"aluno\": 3,\n    \"disciplinas\": [\n        2\n    ],\n    \"titulo\": \"Tarefa de esporte\",\n    \"descricao\": \"jogar basquete\",\n    \"data_entrega\": \"2023-09-25\",\n    \"status_conclusao\": false\n}"
+						},
+						{
+							"name": "Post_Fail_No_Fields",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"titulo\": \"Tarefa de esporte\",\r\n  \"descricao\": \"jogar basquete\",\r\n  \"data_entrega\": \"2023-09-25\",\r\n  \"status_conclusao\": false\r\n  \r\n  \r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/tarefas/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"tarefas",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 20:12:24 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "117"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"ValidationError\",\n    \"cause\": [\n        {\n            \"aluno\": [\n                \"This field is required.\"\n            ],\n            \"disciplinas\": [\n                \"This field is required.\"\n            ]\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Chama e mostra a Tarefa com id especifico",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"titulo\": \"Tarefa de trabalho\",\r\n  \"descricao\": \"Realizar exercícios da página 12\",\r\n  \"data_entrega\": \"2023-09-29\",\r\n  \"status_conclusao\": false,\r\n  \"aluno\": 2,  \r\n  \"disciplinas\": [2] \r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/tarefas/2/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"tarefas",
+								"2",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get_ID_Sucess",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"titulo\": \"Tarefa de trabalho\",\r\n  \"descricao\": \"Realizar exercícios da página 12\",\r\n  \"data_entrega\": \"2023-09-29\",\r\n  \"status_conclusao\": false,\r\n  \"aluno\": 2,  \r\n  \"disciplinas\": [2] \r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/tarefas/1/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"tarefas",
+										"1",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 20:14:09 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "163"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"aluno\": 4,\n    \"disciplinas\": [],\n    \"titulo\": \"Tarefa de Casa\",\n    \"descricao\": \"Realizar exercícios da página 10\",\n    \"data_entrega\": \"2023-09-30\",\n    \"status_conclusao\": false\n}"
+						},
+						{
+							"name": "Get_ID_Not_Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"titulo\": \"Tarefa de trabalho\",\r\n  \"descricao\": \"Realizar exercícios da página 12\",\r\n  \"data_entrega\": \"2023-09-29\",\r\n  \"status_conclusao\": false,\r\n  \"aluno\": 2,  \r\n  \"disciplinas\": [2] \r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/tarefas/10/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"tarefas",
+										"10",
+										""
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 20:14:51 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "23"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"Not found.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Deleta tarefa com id especifico",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"aluno\": 3,\r\n    \"disciplinas\": [\r\n        2\r\n    ],\r\n    \"titulo\": \"Tarefa do trampo\",\r\n    \"descricao\": \"Realizar exercícios da página 11\",\r\n    \"data_entrega\": \"2023-09-21\",\r\n    \"status_conclusao\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/tarefas/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"tarefas",
+								"1",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete_Sucess",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 2,\r\n    \"aluno\": 3,\r\n    \"disciplinas\": [\r\n        2\r\n    ],\r\n    \"titulo\": \"Tarefa do trampo\",\r\n    \"descricao\": \"Realizar exercícios da página 11\",\r\n    \"data_entrega\": \"2023-09-21\",\r\n    \"status_conclusao\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/tarefas/7/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"tarefas",
+										"7",
+										""
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 20:15:55 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": null
+						},
+						{
+							"name": "Delete_Fail_Not_Found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 2,\r\n    \"aluno\": 3,\r\n    \"disciplinas\": [\r\n        2\r\n    ],\r\n    \"titulo\": \"Tarefa do trampo\",\r\n    \"descricao\": \"Realizar exercícios da página 11\",\r\n    \"data_entrega\": \"2023-09-21\",\r\n    \"status_conclusao\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/tarefas/10/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"tarefas",
+										"10",
+										""
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 20:16:57 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "23"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"Not found.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Listando todas as tarefas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/tarefas/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"tarefas",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get_List_Sucess",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/tarefas/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"tarefas",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 20:17:27 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "621"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"aluno\": 4,\n        \"disciplinas\": [],\n        \"titulo\": \"Tarefa de Casa\",\n        \"descricao\": \"Realizar exercícios da página 10\",\n        \"data_entrega\": \"2023-09-30\",\n        \"status_conclusao\": false\n    },\n    {\n        \"id\": 3,\n        \"aluno\": 4,\n        \"disciplinas\": [\n            2\n        ],\n        \"titulo\": \"Tarefa de escola\",\n        \"descricao\": \"Realizar exercícios da página 15\",\n        \"data_entrega\": \"2023-09-30\",\n        \"status_conclusao\": false\n    },\n    {\n        \"id\": 5,\n        \"aluno\": 3,\n        \"disciplinas\": [\n            2\n        ],\n        \"titulo\": \"Tarefa de esporte\",\n        \"descricao\": \"pedalar\",\n        \"data_entrega\": \"2023-09-29\",\n        \"status_conclusao\": false\n    },\n    {\n        \"id\": 6,\n        \"aluno\": 3,\n        \"disciplinas\": [\n            2\n        ],\n        \"titulo\": \"Tarefa de esporte\",\n        \"descricao\": \"jogar basquete\",\n        \"data_entrega\": \"2023-09-25\",\n        \"status_conclusao\": false\n    }\n]"
+						},
+						{
+							"name": "Get_List_Error_URL",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/tarefa/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"tarefa",
+										""
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 20:18:51 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "3294"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta http-equiv=\"content-type\" content=\"text/html; charset=utf-8\">\n        <title>Page not found at /api/tarefa/</title>\n        <meta name=\"robots\" content=\"NONE,NOARCHIVE\">\n        <style type=\"text/css\">\n    html * { padding:0; margin:0; }\n    body * { padding:10px 20px; }\n    body * * { padding:0; }\n    body { font:small sans-serif; background:#eee; color:#000; }\n    body>div { border-bottom:1px solid #ddd; }\n    h1 { font-weight:normal; margin-bottom:.4em; }\n    h1 span { font-size:60%; color:#666; font-weight:normal; }\n    table { border:none; border-collapse: collapse; width:100%; }\n    td, th { vertical-align:top; padding:2px 3px; }\n    th { width:12em; text-align:right; color:#666; padding-right:.5em; }\n    #info { background:#f6f6f6; }\n    #info ol { margin: 0.5em 4em; }\n    #info ol li { font-family: monospace; }\n    #summary { background: #ffc; }\n    #explanation { background:#eee; border-bottom: 0px none; }\n    pre.exception_value { font-family: sans-serif; color: #575757; font-size: 1.5em; margin: 10px 0 10px 0; }\n  </style>\n    </head>\n    <body>\n        <div id=\"summary\">\n            <h1>Page not found \n                <span>(404)</span>\n            </h1>\n            <table class=\"meta\">\n                <tr>\n                    <th>Request Method:</th>\n                    <td>GET</td>\n                </tr>\n                <tr>\n                    <th>Request URL:</th>\n                    <td>http://127.0.0.1:8000/api/tarefa/</td>\n                </tr>\n            </table>\n        </div>\n        <div id=\"info\">\n            <p>\n      Using the URLconf defined in \n                <code>core.urls</code>,\n      Django tried these URL patterns, in this order:\n            </p>\n            <ol>\n                <li>\n            \n                admin/\n                \n            \n          </li>\n                <li>\n            \n                api/\n                \n            \n                alunos/\n                \n            \n          </li>\n                <li>\n            \n                api/\n                \n            \n                alunos/&lt;int:pk&gt;/\n                \n            \n          </li>\n                <li>\n            \n                api/\n                \n            \n                disciplinas/\n                \n            \n          </li>\n                <li>\n            \n                api/\n                \n            \n                disciplinas/&lt;int:pk&gt;/\n                \n            \n          </li>\n                <li>\n            \n                api/\n                \n            \n                tarefas/\n                \n            \n          </li>\n                <li>\n            \n                api/\n                \n            \n                tarefas/&lt;int:pk&gt;/\n                \n            \n          </li>\n                <li>\n            \n                api/\n                \n            \n                alunos/&lt;int:pk&gt;/tarefas/\n                \n            \n          </li>\n            </ol>\n            <p>\n        \n          The current path, \n                <code>api/tarefa/</code>,\n        \n        didn’t match any of these.\n            </p>\n        </div>\n        <div id=\"explanation\">\n            <p>\n      You’re seeing this error because you have \n                <code>DEBUG = True</code> in\n      your Django settings file. Change that to\n                <code>False</code>, and Django\n      will display a standard 404 page.\n            </p>\n        </div>\n    </body>\n</html>"
+						}
+					]
+				},
+				{
+					"name": "Atualiza todos os campos de tarefa com id especifico",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"aluno\": 3,\r\n    \"disciplinas\": [\r\n        2\r\n    ],\r\n    \"titulo\": \"Tarefa do trampo\",\r\n    \"descricao\": \"Realizar exercícios da página 11\",\r\n    \"data_entrega\": \"2023-09-21\",\r\n    \"status_conclusao\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/tarefas/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"tarefas",
+								"1",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Put_Sucess",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 2,\r\n    \"aluno\": 3,\r\n    \"disciplinas\": [\r\n        2\r\n    ],\r\n    \"titulo\": \"Tarefa do trampo\",\r\n    \"descricao\": \"Realizar exercícios da página 11\",\r\n    \"data_entrega\": \"2023-09-21\",\r\n    \"status_conclusao\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/tarefas/1/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"tarefas",
+										"1",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 20:19:40 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "165"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"aluno\": 3,\n    \"disciplinas\": [\n        2\n    ],\n    \"titulo\": \"Tarefa do trampo\",\n    \"descricao\": \"Realizar exercícios da página 11\",\n    \"data_entrega\": \"2023-09-21\",\n    \"status_conclusao\": true\n}"
+						},
+						{
+							"name": "Put_Fail_No_Field",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 2,\r\n   \r\n    \"titulo\": \"Tarefa do trampo\",\r\n    \"descricao\": \"Realizar exercícios da página 11\",\r\n    \"data_entrega\": \"2023-09-21\",\r\n    \"status_conclusao\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/tarefas/1/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"tarefas",
+										"1",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 20:20:40 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "79"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"aluno\": [\n        \"This field is required.\"\n    ],\n    \"disciplinas\": [\n        \"This field is required.\"\n    ]\n}"
+						},
+						{
+							"name": "Put_Fail_Not_Found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 2,\r\n    \"aluno\": 3,\r\n    \"disciplinas\": [\r\n        2\r\n    ],\r\n    \"titulo\": \"Tarefa do trampo\",\r\n    \"descricao\": \"Realizar exercícios da página 11\",\r\n    \"data_entrega\": \"2023-09-21\",\r\n    \"status_conclusao\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/tarefas/10/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"tarefas",
+										"10",
+										""
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 20:21:28 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "23"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"Not found.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Listando todas as tarefas de aluno",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/alunos/2/tarefas/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"alunos",
+								"2",
+								"tarefas",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get_Sucess_Tasks_Students",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/alunos/4/tarefas/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"alunos",
+										"4",
+										"tarefas",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 20:22:58 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "168"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 3,\n        \"aluno\": 4,\n        \"disciplinas\": [\n            2\n        ],\n        \"titulo\": \"Tarefa de escola\",\n        \"descricao\": \"Realizar exercícios da página 15\",\n        \"data_entrega\": \"2023-09-30\",\n        \"status_conclusao\": false\n    }\n]"
+						},
+						{
+							"name": "Get_Fail_Not_Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/alunos/10/tarefas/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"alunos",
+										"10",
+										"tarefas",
+										""
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 25 Sep 2023 20:24:19 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.11.4"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Cookie"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "23"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"Not found.\"\n}"
+						}
+					]
+				}
+			],
+			"description": "Esta Collection diz respeito ao model Tarefa, que possui os seguintes atributos:\n\n- titulo (campo de texto normal c/ tamanho máx. de 100)\n- descrição (campo de Texto)\n- data_entrega (campo de data)\n- status_conclusão (campo de Bolleano)\n- aluno (Foreign Key referente ao model de Aluno\n- disciplinas (Foreign Key referente ao model de disciplina)\n    \n\nNessa Collection também temos todos os métodos requeridos:\n\n\\- POST para add uma tarefa nova  \n\\- GET com ID para mostrar a tarefa específica\n\n\\- GET para listar todas as tarefas\n\n\\- GET para listar todas as tarefas de um aluno específico pelo ID dele\n\n\\- PUT com ID para atualizar todos os campos da tarefa específica\n\n\\- DELETE com ID para deletar a tarefa específica\n\nOBS:\n\nEssa Collection também consta possiveis respostas para requests de cada endpoint, mostrando o url e o body da request, o código HTTP retornado e outras informações.\n\nAcesse e faça bom proveito de todos os endpoints!"
+		}
+	]
+}
